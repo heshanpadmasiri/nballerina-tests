@@ -9,12 +9,6 @@ public function bar() returns int {
     return 42;
 }
 
-public function run(int val) returns int {
+public function echo(int val) returns int {
     return val;
-}
-
-public function main() {
-    foo();
-    int val = bar();
-    int val2 = run(val);
 }
