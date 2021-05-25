@@ -35,4 +35,5 @@ define dso_local i32 @main() {
 }
 
 declare { i64, i1 } @llvm.ssub.with.overflow.i64(i64, i64)
-declare dso_local void @abort() local_unnamed_addr cold noreturn nounwind
+
+declare dso_local void @abort() noreturn nounwind
