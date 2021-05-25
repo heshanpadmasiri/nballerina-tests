@@ -6,7 +6,7 @@ function bar() returns int{
     return 44;
 }
 
-public function main() {
+public function test() {
     int val = 43;
     foo(42, val, bar(), ~val, (val + 42));
 }
