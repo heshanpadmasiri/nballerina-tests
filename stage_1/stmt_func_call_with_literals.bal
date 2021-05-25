@@ -3,7 +3,6 @@ public function foo1() {
 }
 
 function foo2(int x, int y) {
-    return;
 }
 
 public function foo3() returns int {

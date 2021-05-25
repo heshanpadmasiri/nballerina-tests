@@ -1,6 +1,5 @@
 public function bar() returns int {
     return 43;
-
 }
 
 public function foo() {
