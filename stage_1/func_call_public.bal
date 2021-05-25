@@ -2,11 +2,19 @@
 // RUN: ../nballerinacc %t -o %t.ll
 // RUN: cat %t.ll | filecheck %s
 
-public function foo(){}
+public function foo() {
+}
+
+public function bar() returns int {
+    return 42;
+}
+
+public function run(int val) returns int {
+    return val;
+}
 
 public function main() {
     foo();
+    int val = bar();
+    int val2 = run(val);
 }
-
-// CHECK: define dso_local i32 @main() local_unnamed_addr
-// CHECK: ret i32
