@@ -5,7 +5,7 @@ This repo contains:
 2. Each `.bal` has a corresponding `.ll` file (with the same filename) that contains the corresponding LLVM IR
 3. The `.bal` files also contain a [LLVM LIT](https://llvm.org/docs/CommandGuide/lit.html) header and footer that can be used to as a form of unit test to verify the LLVM IR codegen
   * Note that this only enables a "compile time" check with limited ability to check the codegen correctness
-  * A more extensive "runtime" test suite is required to verify the complete functionality. This will involve compiling the LLVM IR with clang, executing the resulting binary and verifying its output.
+  * A more extensive "runtime" test suite is required to verify the complete functionality. This will involve compiling the LLVM IR with clang, executing the resulting binary and verifying its output. This testing scope can be handled as part of the integration test suite; which can also use the same LIT framework. 
 
 ### Implementation sub tasks
 
