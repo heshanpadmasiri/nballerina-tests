@@ -12,7 +12,7 @@ This repo contains:
 
 Unary negative, multiplication, addition and subtraction operator implementations use LLVM's [arithmetic with overflow](https://llvm.org/docs/LangRef.html#arithmetic-with-overflow-intrinsics) instructions. These compile down to an efficient "jump on overflow" assembly instruction ([ref](https://godbolt.org/z/qnrd9EaEf)). 
 
-For overflows resulting from division operations (and reminder operations) don't set the overflow bit, but rather trigger a hardware exception in x86 ([ref](https://stackoverflow.com/questions/3892379/causing-a-divide-overflow-error-x86)). As such, a less efficient branching logic that checks the operands were used for these operators ([ref](https://wiki.sei.cmu.edu/confluence/display/c/INT32-C.+Ensure+that+operations+on+signed+integers+do+not+result+in+overflow)).
+Overflows resulting from division operations (and reminder operations) don't set the overflow bit, but rather trigger a hardware exception in x86 ([ref](https://stackoverflow.com/questions/3892379/causing-a-divide-overflow-error-x86)). As such, a less efficient branching logic that checks the operand values were used for these operators ([ref](https://wiki.sei.cmu.edu/confluence/display/c/INT32-C.+Ensure+that+operations+on+signed+integers+do+not+result+in+overflow)).
 
 These .ll tests all call `abort()` when an runtime overflow is detected. In production, these calls need to be replaced with an invocation of nBallerina's stack unwind mechanism instead.
 
